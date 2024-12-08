@@ -153,19 +153,6 @@ string GenerateName()
         return result;
 }
 
-void DownloadTextFile()
-{
-    string url = "https://www.cs.cmu.edu/~biglou/resources/bad-words.txt";
-    LogInfo(LogType.Info, $"Downloading base text file...");
-
-    using (WebClient client = new WebClient())
-    {
-        client.DownloadFile(url, wordlistPath);
-    }
-
-    LogInfo(LogType.Info, $"Download complete!");
-}
-
 void LogInfo(LogType logType, object data)
 {
     var currentColour = Console.ForegroundColor;
